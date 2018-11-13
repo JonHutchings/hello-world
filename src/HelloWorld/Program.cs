@@ -6,8 +6,11 @@ namespace HelloWorld
   {
     static void Main(string[] args)
     {
-      var messenger = new StockMessenger("Hello World!");
-      Console.WriteLine(messenger.GetMessage());
+      if (args.Length > 0)
+      {
+        var messenger = new StockMessenger(args[args.Length-1]);
+        Console.WriteLine(messenger.GetMessage());
+      }
     }
   }
 }
